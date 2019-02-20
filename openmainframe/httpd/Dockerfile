@@ -1,7 +1,9 @@
-FROM opensuse
+FROM opensuse/leap
 
-RUN zypper --non-interactive update  && zypper --non-interactive in apache2  
+RUN zypper --non-interactive update  && zypper --non-interactive in httpd  
 
 EXPOSE 80 443 
 
-CMD ["systemctl","start","apache2"]
+ADD		run-httpd.sh /run-httpd.sh
+RUN		chmod -v +x /run-httpd.sh
+CMD		["/run-httpd.sh"]

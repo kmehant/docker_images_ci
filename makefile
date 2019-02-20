@@ -9,7 +9,6 @@ runcontainer:
 
 dockerpush:
 	echo "$(DOCKER_PASSWORD)" | docker login -u "$(DOCKER_USERNAME)" --password-stdin
-	docker tag $(IMAGE_NAME) $(USER_NAME)/$(IMAGE_NAME):latest
 	docker push $(USER_NAME)/$(IMAGE_NAME):latest
 	
 

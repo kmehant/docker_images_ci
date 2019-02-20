@@ -1,5 +1,7 @@
-language : generic
-   
-services:
-   - docker
+language: bash
 
+services: 
+    - docker
+
+script: 
+ - echo "hello its working"

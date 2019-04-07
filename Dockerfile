@@ -5,5 +5,5 @@ RUN zypper --non-interactive update && \
     && zypper --non-interactive install gnu-cobol
 
 VOLUME work
-
+LABEL author=Mehant
 CMD ["cobc", "--version"]
